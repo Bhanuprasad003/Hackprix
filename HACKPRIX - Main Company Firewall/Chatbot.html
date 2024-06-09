@@ -1,108 +1,182 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversation Chat</title>
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+        * {
             margin: 0;
             padding: 0;
-            background-image: url(media/bg.gif);
-            background-color: grey;
-            /* background-position: center center; */
-            background-size: cover;
-            background-repeat: no-repeat;
-
+            box-sizing: border-box;
+            font-family: 'Pixelify Sans', sans-serif;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: transparent;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-image: url(media/bckgif2.gif);
+        }
+
+        .wrapper {
+            width: 420px;
+            background: transparent;
             border: 2px solid rgba(255, 255, 255, .2);
             backdrop-filter: blur(2px);
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .conversation {
-            max-height: 600px;
-            overflow-y: auto;
-            padding-right: 10px;
-        }
-
-        .message {
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            max-width: 75%;
-        }
-
-        .user-message {
-            background-color: #e6f2ff;
-            margin-left: auto;
-            text-align: right;
-        }
-
-        .bot-message {
-            background-color: #d9ead3;
-            margin-right: auto;
-            text-align: left;
-        }
-
-        form {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            resize: none;
-        }
-
-        button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #007bff;
             color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            align-self: flex-end;
+            border-radius: 12px;
+            padding: 30px 40px;
         }
 
-        button:hover {
-            background-color: #0056b3;
+        .wrapper h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .wrapper .input-box {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin: 30px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255, 255, 255, .2);
+            border-radius: 40px;
+            font-size: 16px;
+            color: #fff;
+            padding: 20px 45px 20px 20px;
+        }
+
+        .input-box input::placeholder {
+            color: #fff;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 20px;
+            top: 30%;
+            transform: translate(-50%);
+            font-size: 20px;
+
+        }
+
+        .wrapper .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14.5px;
+            margin: -15px 0 15px;
+        }
+
+        .remember-forgot label input {
+            accent-color: #fff;
+            margin-right: 3px;
+
+        }
+
+        .remember-forgot a {
+            color: #fff;
+            text-decoration: none;
+
+        }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+        .wrapper .btn {
+            width: 100%;
+            height: 45px;
+            background: magenta;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .wrapper .register-link {
+            font-size: 14.5px;
+            text-align: center;
+            margin: 20px 0 15px;
+
+        }
+
+        .register-link p a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link p a:hover {
+            text-decoration: underline;
+        }
+
+        body .box {
+            height: 100vh;
+            width: 100%;
+            opacity: 0.50;
+            position: absolute;
+            top: 0;
+            background-color: black;
+        }
+
+        @media screen and (max-width: 555px) {
+            .wrapper {
+                width: 320px;
+                padding: 20px 30px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="conversation">
-            {% for message in history %}
-            {% if loop.index is odd %}
-            <div class="message user-message">
-                <p>{{ message }}</p>
+    <div class="box"></div>
+    <div class="wrapper">
+        <form action="">
+            <h1>Sign Up</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
             </div>
-            {% else %}
-            <div class="message bot-message">
-                <p>{{ message }}</p>
+
+            <div class="input-box">
+                <input type="email" placeholder="Email" required>
+                <i class='bx bxs-user'></i>
             </div>
-            {% endif %}
-            {% endfor %}
-        </div>
-        <form action="/" method="post">
-            <textarea name="prompt" rows="4" placeholder="Type your message..."></textarea>
-            <button type="submit">Send</button>
+            <div class="input-box">
+                <input type="tel" placeholder="Mobile" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember Me</label>
+                <!-- <a href="#">Forgot Password</a> -->
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <div class="register-link">
+                <!-- <p>Dont have an account? <a href="#">Register</a></p> -->
+            </div>
         </form>
     </div>
 </body>
