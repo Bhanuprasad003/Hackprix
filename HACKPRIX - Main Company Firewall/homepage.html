@@ -1,89 +1,184 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detector</title>
-    <link rel="stylesheet" href="homepage.css">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="signup.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pixelify Sans', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-image: url(media/bckgif2.gif);
+        }
+
+        .wrapper {
+            width: 420px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            backdrop-filter: blur(2px);
+            color: #fff;
+            border-radius: 12px;
+            padding: 30px 40px;
+        }
+
+        .wrapper h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .wrapper .input-box {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin: 30px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255, 255, 255, .2);
+            border-radius: 40px;
+            font-size: 16px;
+            color: #fff;
+            padding: 20px 45px 20px 20px;
+        }
+
+        .input-box input::placeholder {
+            color: #fff;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 20px;
+            top: 30%;
+            transform: translate(-50%);
+            font-size: 20px;
+
+        }
+
+        .wrapper .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14.5px;
+            margin: -15px 0 15px;
+        }
+
+        .remember-forgot label input {
+            accent-color: #fff;
+            margin-right: 3px;
+
+        }
+
+        .remember-forgot a {
+            color: #fff;
+            text-decoration: none;
+
+        }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+        .wrapper .btn {
+            width: 100%;
+            height: 45px;
+            background: magenta;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .wrapper .register-link {
+            font-size: 14.5px;
+            text-align: center;
+            margin: 20px 0 15px;
+
+        }
+
+        .register-link p a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link p a:hover {
+            text-decoration: underline;
+        }
+
+        body .box {
+            height: 100vh;
+            width: 100%;
+            opacity: 0.50;
+            position: absolute;
+            top: 0;
+            background-color: black;
+        }
+
+        @media screen and (max-width: 555px) {
+            .wrapper {
+                width: 320px;
+                padding: 20px 30px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <div class="main">
-        <nav>
-            <div class="items">
-                <button id="homeButton" class="btn"><a href="#first">Home</a></button>
-                <button id="aboutButton" class="btn"><a href="#second">About Product</a></button>
-                <button id="productButton" class="btn"><a href="#third">Product</a></button>
-                <button id="aboutusButton" class="btn"><a href="#fourth">About Us</a></button>
+    <div class="box"></div>
+    <div class="wrapper">
+        <form action="">
+            <h1>Sign Up</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
             </div>
-        </nav>
 
-        <div class="box"></div>
-
-        <div id="first">
-            <span class="detec"><img width="45" src=""></span>
-            <span class="animate-from-left">Hello! I'm Ware,</span>
-            <span class="animate-from-right">Detective Malware. Nice to meet you!</span>
-            <span>Let DETECTIVE-M FIND HIS SUSPECT- MALWARE!</span>
-        </div>
-        <div id="second">
-            <div class="one">
-                Detective M is a state-of-the-art malware detection software that uses image classification in deep learning to accurately identify malicious files. By converting data into visual formats, our advanced neural networks can detect threats that traditional methods often miss.
+            <div class="input-box">
+                <input type="email" placeholder="Email" required>
+                <i class='bx bxs-user'></i>
             </div>
-            <div class="two">
-                Rely on Detective M for precise predictions and strong protection. Our constantly evolving solution learns from new data to stay ahead of emerging threats, keeping your system secure. With Detective M, you benefit from the latest in AI-driven cybersecurity, ensuring your digital environment is safe from cyberattacks.
+            <div class="input-box">
+                <input type="tel" placeholder="Mobile" required>
+                <i class='bx bxs-user'></i>
             </div>
-        </div>
 
-        <div id="third">
-            <div class="drag-area">
-                <div class="icon"><i class="fa-solid fa-shield-virus"></i></div>
-                <header>Drag & Drop to Upload File</header>
-                <span>OR</span>
-                <button>Browse File</button>
-                <input type="file" hidden>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
             </div>
-        </div>
-
-        <div id="fourth" class="fourth">
-            <section>
-                <div class="card">
-                    <div class="top">
-                        <span>John Doe</span>
-                        <p>My Portfolio</p>
-                    </div>
-                    <div class="middle">
-                        <div class="left">
-                            <img src="media/ptp.gif" alt="">
-                        </div>
-                        <div class="right">
-                            <label for="">Skills:</label>
-                            <div>
-                                <ul>
-                                    <li>Web Designer</li>
-                                    <li>Programmer</li>
-                                    <li>Graphic Designer</li>
-                                </ul>
-                            </div>
-                            <div class="social-icon">
-                                <span><i class="bx bxl-facebook"></i></span>
-                                <span><i class="bx bxl-linkedin"></i></span>
-                                <span><i class="bx bxl-instagram"></i></span>
-                                <span><i class="bx bxl-github"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <!-- <input type="submit" class="btn" value="Hire"> -->
-                    </div>
-                </div>
-            </section>
-        </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember Me</label>
+                <!-- <a href="#">Forgot Password</a> -->
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <div class="register-link">
+                <!-- <p>Dont have an account? <a href="#">Register</a></p> -->
+            </div>
+        </form>
     </div>
-    <script src="homepage.js"></script>
-    <script src="https://kit.fontawesome.com/7852632660.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
